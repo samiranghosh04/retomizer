@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes borderColorTransition {
+  0% {
+    border-color: #4b5563; /* Gray */
+  }
+  50% {
+    border-color: #ffffff; /* White */
+    
+    
+  }
+  100% {
+    border-color: #4b5563; /* Gray */
+  }
+}
+
+.animate-border-transition {
+  animation: borderColorTransition 3s infinite;
+}

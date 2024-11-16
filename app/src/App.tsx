@@ -1,6 +1,8 @@
 import { atom, useAtom, useAtomValue } from 'retomizer';
+import Hero from './Hero';
+// import Candidate from './Candidate';
 
-const salaryAtom = atom(50000);
+const salaryAtom = atom(500000);
 const taxAtom = atom(10000);
 const netSalaryAtom = atom((get) => get(salaryAtom) - get(taxAtom));
 const dataAtom = atom((get) =>  fetch('/fakedata.json').then(res => res.json()));
@@ -22,7 +24,7 @@ function App() {
   const keys = useAtomValue(keysAtom);
   return (
     <>
-      <div>
+      {/* <div>
         <input type="number" value={salary} onChange={(e) => setSalary(e.target.valueAsNumber)} />
       </div>
       <div>
@@ -37,6 +39,10 @@ function App() {
         <div>Data fetched from API: {JSON.stringify(data)}</div>
         <div>Keys from API data: {JSON.stringify(keys)}</div>
       </div>
+      <div>
+        {/* <Candidate/> */}
+      {/* </div>  */}
+      <Hero />
     </>
   )
 }
